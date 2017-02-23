@@ -10,10 +10,19 @@ class GMM():
 		self.n_samples = n_samples # number of samples, a scalar
 		self.n_gauss = n_gauss # number of guassians, a scalar
 		self.generate_samples()
+		self.generate_pdf()
 
 	def generate_samples(self):
 		self.samples = gmm.sample_gaussian_mixture(self.mean, self.var, self.weight, samples=self.n_samples)
-		# data shape (n_samples, dim)
+		'''
+		return sample points, 2d np array (n_samples, dim)
+		'''
+
+	def generate_pdf(self):
+		self.pdf = gmm.gmm_pdf(self.samples, self.mean, self.var, self.weight)
+		'''
+		return pdf of each sample point, 1d np array
+		'''
 	
 
 # A matrix contains a mean point in each row 
