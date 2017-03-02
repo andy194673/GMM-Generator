@@ -14,16 +14,23 @@ if __name__ == '__main__':
 	generateGMMs returns a list of GMM
 	
 	'''
-	n_gauss, n_dim, n_samples_train, n_samples_test = 32, 2, 10000, 1000
+#	n_gauss, n_dim, n_samples_train, n_samples_test = 32, 2, 10000, 1000
+	n_dim, n_samples_train, n_samples_test = 2, 10000, 1000
 	print('Generating data, takes around 25 secs')
 
 	# Training
 	np.random.seed(112)
-	GMMs_train = generateGMMs(n_gauss, n_dim, n_samples_train)
+#	GMMs_train = generateGMMs(n_gauss, n_dim, n_samples_train)
+	GMMs_train_gauss2 = generateGMMs(2, n_dim, n_samples_train)
+	GMMs_train_gauss4 = generateGMMs(4, n_dim, n_samples_train)
+	GMMs_train_gauss8 = generateGMMs(8, n_dim, n_samples_train)
+	GMMs_train_gauss16 = generateGMMs(16, n_dim, n_samples_train)
+	GMMs_train_gauss32 = generateGMMs(32, n_dim, n_samples_train)
 	print('Done generating training set')
 
 	# get mean, co-variance, weight, samples from first GMM in training set
-	GMM = GMMs_train[0]
+#	GMM = GMMs_train[0]
+	GMM = GMMs_train2[0]
 	mean, var, weight, samples, pdf = GMM.mean, GMM.var, GMM.weight, GMM.samples, GMM.pdf
 
 	# Testing

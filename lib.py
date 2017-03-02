@@ -27,7 +27,7 @@ class GMM():
 
 # A matrix contains a mean point in each row 
 def gen_mean_dist(n_gauss, n_dim):
-	return np.random.uniform(low=-1.0, high=1.0, size=(n_gauss, n_dim))
+	return np.random.uniform(low=-10.0, high=10.0, size=(n_gauss, n_dim))
 
 # A list of diagonal matrix for gaussians
 def gen_var_dist(n_gauss, n_dim):
