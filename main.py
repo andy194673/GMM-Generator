@@ -30,11 +30,12 @@ if __name__ == '__main__':
 
 	# get mean, co-variance, weight, samples from first GMM in training set
 #	GMM = GMMs_train[0]
-	GMM = GMMs_train2[0]
+	GMM = GMMs_train_gauss2[0]
 	mean, var, weight, samples, pdf = GMM.mean, GMM.var, GMM.weight, GMM.samples, GMM.pdf
 
 	# Testing
 	np.random.seed(113)
+	n_gauss = 2
 	GMMs_test = generateGMMs(n_gauss, n_dim, n_samples_test)
 	print('Done generating testing set')
 
