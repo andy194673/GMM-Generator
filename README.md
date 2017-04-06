@@ -7,7 +7,3 @@ Dependency:
 numpy
 pypr
 matplotlib
-<<<<<<< HEAD
-=======
-
->>>>>>> 9f8e70bb15e5a61030550cbf91336a20e3556e14
